@@ -18,8 +18,17 @@ public class StringCalculatorTest {
 		assertEquals(0,cal.add(""));
 	}
 	
+	@Test(expected = RuntimeException.class)
+	public void add_negative() throws Exception{
+		cal.add("1,-2,3");
+	}
+	
 	@Test
 	public void add_one() throws Exception{
-		assertEquals(1,cal.add("1"));
+		assertEquals(6,cal.add("1,2:3"));
+		assertEquals(2,cal.add("2"));
+		assertEquals(6,cal.add("//;\n1;2;3"));
 	}
+	
+	
 }
