@@ -1,4 +1,4 @@
-package Test;
+package part2.Test;
 
 public class Calculator {
 	int add(int i, int j){
